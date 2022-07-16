@@ -5,7 +5,7 @@
         type: String,
         required: true,
     },
-    foto: {
+    imageUrl: {
         type: String,
         required: true,
     },

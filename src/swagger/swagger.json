@@ -1,0 +1,352 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": " Projeto03 Rick adn Morty",
+    "description": "Criação de personagens",
+    "termsOfService": "",
+    "contact": {
+      "email": "rob.robervan@hotmail.com"
+    },
+    "verson": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001",
+      "description": "Api de teste de personagens"
+    }
+  ],
+  "paths": {
+    "/users/create": {
+      "post": {
+        "summary": "Cria usuario",
+        "description": "Rota resposavel por criar usuario",
+        "tags": ["Usuarios"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuarios"
+              },
+              "examples": {
+                "Usuarios": {
+                  "value": {
+                    "name": "swagger usuarios",
+                    "username": "souza u rrrl",
+                    "email": "robr.robervan@hotmail.com",
+                    "password": "12345",
+                    "avatar": "https://avatars.githubusercontent.com/u/103292038?v=4"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Criado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Usuarios"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "Lista de todos os Usuarios",
+        "description": "Rota de todos os Usuarios",
+        "tags": ["Usuarios"],
+        "responses": {
+          "404": {
+            "description": "Not found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Usuarios"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "Autentica usuarios",
+        "description": "Rota resposavel autenticar usuarios",
+        "tags": ["Auth"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auth"
+              },
+              "examples": {
+                "Auth": {
+                  "value": {
+                    "email": "robr.robervan@hotmail.com",
+                    "password": "12345"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "logado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Auth"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/characters": {
+      "get": {
+        "summary": "Lista de todos os personagens",
+        "description": "Rota de todos os personagens",
+        "tags": ["Personagens"],
+        "responses": {
+          "404": {
+            "description": "Not found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Personagens"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/characters/find/{id}": {
+      "get": {
+        "summary": "Busca pelo id dos personagens",
+        "description": "Rota resposavel pelo id dos personagens",
+        "tags": ["Personagens"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id da paleta para busca",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request. Please try again"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Personagens"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/characters/create": {
+      "post": {
+        "summary": "Cria personagens",
+        "description": "Rota resposavel por criar personagens",
+        "tags": ["Personagens"],
+        "security": [{"bearerAuth":[]}],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Personagens"
+              },
+              "examples": {
+                "Personagens": {
+                  "value": {
+                    "name": "teste swagger",
+                    "imageUrl": "foto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Criado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Personagens"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/characters/update/{id}": {
+      "put": {
+        "summary": "Edita id dos personagens",
+        "description": "Rota resposavel por Edita os personagens pelo id",
+        "tags": ["Personagens"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id dos  personagens",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Personagens"
+              },
+              "examples": {
+                "Personagens": {
+                  "value": {
+                    "name": "teste swagger edited",
+                    "foto": "foto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad request"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Personagens"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/characters/delete/{id}": {
+      "delete": {
+        "summary": "Apaga um personagen pelo ID",
+        "description": "Rota resposavel por apagar pelo id",
+        "tags": ["Personagens"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do personagen para deletar",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    
+    "components": {
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      },
+      "schemas": {
+        "Personagens": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "foto": {
+              "type": "string"
+            }
+          }
+        },
+        "Usuarios": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "username": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          }
+        },
+        "Auth": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

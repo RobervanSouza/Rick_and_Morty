@@ -10,7 +10,7 @@ const findAllPersonagensController = async (req, res) => {
   if (allpersonagens.length == 0) {
     return res.status(400).send({ message: 'Nenhum personagen cadastrado' });
   }
-  res.send(allpersonagens);
+  res.status(200).send({ message: "Todos os personagens da lista", allpersonagens, });
 };
 
 // id dos personagens
@@ -27,14 +27,14 @@ const findByIdPersonagenController =  async (req, res) => {
       });
   }
 
-  res.send(chosenPersonagen);
+  res.send({message: "Id do personagem", chosenPersonagen});
 };
 
 // cria personagens
 const createPersonagenController = async (req, res) => {
   const personagen = req.body;
   const newPersonagen = await personagensService.createPersonagenService(personagen);
-  res.status(201).send(newPersonagen);
+  res.status(201).send({ message: "Personagen criado com sucesso!", newPersonagen });
 };
 
 // edita personagens
@@ -45,7 +45,8 @@ const updatePersonagenController = async (req, res) => {
     idParam,
     personagenEdited,
   );
-  res.send(updatePersonagen);
+  res.send({ message: "Id editado com sucesso", updatePersonagen});
+ 
 };
 
 
@@ -55,7 +56,7 @@ const updatePersonagenController = async (req, res) => {
 const deletePersonagenController = async (req, res) => {
   const idParam = req.params.id;  
   await personagensService.deletePersonagenService(idParam)
-  res.send({ message: "personagen deletado com sucesso!!!" });
+  res.send({ message: "Personagen deletado com sucesso!!!", idParam });
 
 };
 
