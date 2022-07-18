@@ -13,6 +13,10 @@
     {
       "url": "http://localhost:3001",
       "description": "Api de teste de personagens"
+    }, 
+    {
+      "url": "https://rickandmortyprojeto04.herokuapp.com/",
+      "description": "Api do Heroku"
     }
   ],
   "paths": {
