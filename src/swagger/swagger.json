@@ -304,6 +304,44 @@
         }
       }
     },
+    "/characters/search": {
+      "get": {
+        "summary": "Perquisa o Personagem",
+        "description": "Rota para pesquisa o personagem",
+        "tags": ["Personagens"],
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "400": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Personagens"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+  
     
     "components": {
       "securitySchemes": {
@@ -314,17 +352,7 @@
         }
       },
       "schemas": {
-        "Personagens": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "foto": {
-              "type": "string"
-            }
-          }
-        },
+        
         "Usuarios": {
           "type": "object",
           "properties": {
@@ -341,6 +369,17 @@
               "type": "string"
             },
             "avatar": {
+              "type": "string"
+            }
+          }
+        },
+        "Personagens": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "imageUrl": {
               "type": "string"
             }
           }
