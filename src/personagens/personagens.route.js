@@ -8,7 +8,7 @@ const {validId, validObjectBody} = require("./personagens.middleware");
 
 
 
-route.get("", controllerPersonagens.findAllPersonagensController);
+route.get("",authMiddleware, controllerPersonagens.findAllPersonagensController);
 route.get("/find/:id", validId, controllerPersonagens.findByIdPersonagenController);
 route.post('/create', validObjectBody, controllerPersonagens.createPersonagenController);
 route.put('/update/:id', validId, validObjectBody, controllerPersonagens.updatePersonagenController);
