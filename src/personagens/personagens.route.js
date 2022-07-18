@@ -30,10 +30,11 @@ route.delete(
   validId,
   controllerPersonagens.deletePersonagenController,
 );
+/*
 route.get(
   '/search',
  
   controllerPersonagens.pesquisaPersonagenController,
 );
-
+*/
 module.exports = route;

@@ -33,6 +33,8 @@ const deletePersonagenService = async (id) => {
   return await Personagen.findByIdAndDelete(id);
 };
 
+// pesquisa personagens
+/*
 const pesquisaPersonagemService = (name) =>
   Personagen.find({
     name: { $regex: `${name || ''}`, $options: 'i' },
@@ -40,7 +42,7 @@ const pesquisaPersonagemService = (name) =>
     .sort({ _id: -1 })
     .populate('user');
 
-
+*/
 module.exports = {
   findAllPersonagensService,
   findByIdPersonagenService,

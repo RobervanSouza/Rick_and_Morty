@@ -59,6 +59,7 @@ const deletePersonagenController = async (req, res) => {
 };
 
 // pesquisa personagens
+/*
 const pesquisaPersonagenController = async (req, res) => {
   const { name } = req.query;
 
@@ -67,7 +68,7 @@ const pesquisaPersonagenController = async (req, res) => {
   if (personagem.length === 0) {
     return res
       .status(400)
-      .send({ message: 'There are no characters with this name registered!' });
+      .send({ message: 'Pesquisa personagem por nome!' });
   }
   res.status(200).send({
     personagem: personagem.map((personagem) => ({
@@ -79,7 +80,7 @@ const pesquisaPersonagenController = async (req, res) => {
     })),
   });
 };
-
+*/
 module.exports = {
   findAllPersonagensController,
   findByIdPersonagenController,
