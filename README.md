@@ -1,6 +1,9 @@
 <<<<<<< HEAD
 # 
 =======
+# Link do deploy no HEROKU
+https://rickandmortyprojeto04.herokuapp.com/api-docs/
+
 # Estrutura para o Projeto 04 Full-Stack
 
 #Projeto Rick and Morty - Back-end e Front-end (Full-Stack)
@@ -8,13 +11,19 @@
 #Projeto final do terceiro mudulo do curso full-stack:
 ## Usando as seguites tecnologias:
 
-* JavaScript
 * NodeJS
 * Express
 * Cors
 * Nodemon
 * MongoDB
 * Prettierrc 
+* bcryptjs
+* jsonwebtoken
+
+## Linguagens:
+
+*JavaScript e EJS
+
 ## instruções:
 * Primeiro instalar o NodeJs, {https://nodejs.org/en/download/}
 Após o download e instalação, execute no terminal: 
@@ -27,6 +36,8 @@ Após o download e instalação, execute no terminal:
 * Nodemon >> npm i nodemon -D
 * Cors >> npm i cors
 * mongoose >>  npm i mongoose
+* dotenvi >> npm i dotenv
+
 
 * Executar o projeto abra o terminal digite >> npm run dev
 
@@ -81,27 +92,41 @@ Após o download e instalação, execute no terminal:
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Funcionamento no swagger:
 
 <div align="center">
-<img src="" width="300px" />
+<img src="https://user-images.githubusercontent.com/103292038/179621956-9f1ef2a2-9413-4772-8d85-a9dac598ab96.png" width="300px" />
 </div>
+## para testar em front-end Tem que baixar atravez do site da BlueEdTeck: todos os direitos reservados:
+
+# Objetivo do Projeto
+* Fazer login
+* Cadastrar de usuários
+* Mostrar todos os Personagens
+* Cadastro de Personagens
+* Busca personagens by id
+* Edição de Personagens po id
+* Exclusão de Personagens
+* Busca Personagem por nome
+
+# Licença
+Este projeto está sob a licença (Mozilla Public License 2.0) - veja o arquivo LICENSE.md
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
