@@ -59,7 +59,6 @@ const deletePersonagenController = async (req, res) => {
 };
 
 // pesquisa personagens
-/*
 const pesquisaPersonagenController = async (req, res) => {
   const { name } = req.query;
 
@@ -80,7 +79,7 @@ const pesquisaPersonagenController = async (req, res) => {
     })),
   });
 };
-*/
+
 module.exports = {
   findAllPersonagensController,
   findByIdPersonagenController,
