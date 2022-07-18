@@ -35,7 +35,7 @@ const deletePersonagenService = async (id) => {
 
 // pesquisa personagens
 
-const pesquisaPersonagemService = (name) =>
+const pesquisaPersonagenService = (name) =>
   Personagen.find({
     name: { $regex: `${name || ''}`, $options: 'i' },
   })
@@ -49,5 +49,5 @@ module.exports = {
   createPersonagenService,
   updatePersonagenService,
   deletePersonagenService,
-  pesquisaPersonagemService,
+  pesquisaPersonagenService,
 };

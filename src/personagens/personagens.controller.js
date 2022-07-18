@@ -62,7 +62,7 @@ const deletePersonagenController = async (req, res) => {
 const pesquisaPersonagenController = async (req, res) => {
   const { name } = req.query;
 
-  const personagens = await personagensService.pesquisaPersonagemService(name);
+  const personagens = await personagensService.pesquisaPersonagenService(name);
 
   if (personagens.length === 0) {
     return res
