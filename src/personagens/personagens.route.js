@@ -30,7 +30,7 @@ route.delete(
   validId,
   controllerPersonagens.deletePersonagenController,
 );
-router.get(
+route.get(
   '/search',
  
   controllerPersonagens.pesquisaPersonagenController,
