@@ -1,7 +1,7 @@
 const userService = require('./users.service');
 const authService = require('../auth/auth.service');
 const createUserController = async (req, res) => {
-  const {  name, username, email, password, avatar } = req.body;
+  const { name, username, email, password, avatar } = req.body;
 
   if (!username || !name || !email || !password || !avatar) {
     return res
@@ -21,26 +21,25 @@ const createUserController = async (req, res) => {
   }
 
   const token = authService.generateToken(user.id);
-res.status(201).send({
-  user:{
-    message: "Usuario criado com sucesso",
-    id: user.id,
-    name,
-    username,
-    email,
-    avatar,
-  },
-  token,
-});
-
+  res.status(201).send({
+    user: {
+      message: 'Usuario criado com sucesso',
+      id: user.id,
+      name,
+      username,
+      email,
+      avatar,
+    },
+    token,
+  });
 };
 const findAllUserController = async (req, res) => {
   const users = await userService.findAllUserService();
-  if(users.length  === 0) {
+  if (users.length === 0) {
     return res.status(400).send({ message: 'Não existem usuario cadastrado' });
   }
-  
-  res.send({ message: "Todos os usuario cadastrados", users});
+
+  res.send({ message: 'Todos os usuario cadastrados', users });
 };
 
 module.exports = {

@@ -7,25 +7,24 @@ module.exports = (req, res, next) => {
   if (!authHeader) {
     return res.status(401).send({ message: 'Token não informado!!!' });
   }
-  const parts = authHeader.split("");
+  const parts = authHeader.split('');
 
   if (parts.length !== 2) {
     return res.status(401).send({ message: 'Token invalido!!!' });
   }
 
-  const [scheme, token, ] = parts;
-  if (!/^Bearer^/i.teste(scheme)){
+  const [scheme, token] = parts;
+  if (!/^Bearer^/i.teste(scheme)) {
     return res.status(401).send({ message: 'Token mal formatado' });
   }
-  jwt.verify(token, process.env.SECRET, async (err, decoded)=> {
+  jwt.verify(token, process.env.SECRET, async (err, decoded) => {
     const user = await findByIdUserService(decoded.id);
 
-    if( err || !user || !user.id) {
-        return res.status(401).send({ message: 'Token invalido' });
+    if (err || !user || !user.id) {
+      return res.status(401).send({ message: 'Token invalido' });
     }
 
     req.userId = user.id;
     return next();
   });
-  
 };

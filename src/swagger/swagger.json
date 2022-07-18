@@ -10,7 +10,6 @@
     "verson": "1.0.0"
   },
   "servers": [
-    
     {
       "url": "https://rickandmortyprojeto04.herokuapp.com",
       "description": "Api do Heroku"
@@ -71,7 +70,7 @@
         "summary": "Lista de todos os Usuarios",
         "description": "Rota de todos os Usuarios",
         "tags": ["Usuarios"],
-        "security": [{"bearerAuth":[]}],
+        "security": [{ "bearerAuth": [] }],
         "responses": {
           "404": {
             "description": "Not found"
@@ -137,7 +136,7 @@
         "summary": "Lista de todos os personagens",
         "description": "Rota de todos os personagens",
         "tags": ["Personagens"],
-        "security": [{"bearerAuth":[]}],
+        "security": [{ "bearerAuth": [] }],
         "responses": {
           "404": {
             "description": "Not found"
@@ -163,7 +162,7 @@
         "summary": "Busca pelo id dos personagens",
         "description": "Rota resposavel pelo id dos personagens",
         "tags": ["Personagens"],
-        "security": [{"bearerAuth":[]}],
+        "security": [{ "bearerAuth": [] }],
         "parameters": [
           {
             "name": "id",
@@ -195,7 +194,7 @@
         "summary": "Cria personagens",
         "description": "Rota resposavel por criar personagens",
         "tags": ["Personagens"],
-        "security": [{"bearerAuth":[]}],
+        "security": [{ "bearerAuth": [] }],
         "requestBody": {
           "content": {
             "application/json": {
@@ -236,7 +235,7 @@
         "summary": "Edita id dos personagens",
         "description": "Rota resposavel por Edita os personagens pelo id",
         "tags": ["Personagens"],
-        "security": [{"bearerAuth":[]}],
+        "security": [{ "bearerAuth": [] }],
         "parameters": [
           {
             "name": "id",
@@ -285,7 +284,7 @@
         "summary": "Apaga um personagen pelo ID",
         "description": "Rota resposavel por apagar pelo id",
         "tags": ["Personagens"],
-        "security": [{"bearerAuth":[]}],
+        "security": [{ "bearerAuth": [] }],
         "parameters": [
           {
             "name": "id",
@@ -341,8 +340,7 @@
         }
       }
     },
-  
-    
+
     "components": {
       "securitySchemes": {
         "bearerAuth": {
@@ -352,7 +350,6 @@
         }
       },
       "schemas": {
-        
         "Usuarios": {
           "type": "object",
           "properties": {
