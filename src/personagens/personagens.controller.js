@@ -62,15 +62,15 @@ const deletePersonagenController = async (req, res) => {
 const pesquisaPersonagenController = async (req, res) => {
   const { name } = req.query;
 
-  const personagem = await personagensService.pesquisaPersonagenController(name);
+  const personagens = await personagensService.pesquisaPersonagemService(name);
 
-  if (personagem.length === 0) {
+  if (personagens.length === 0) {
     return res
       .status(400)
       .send({ message: 'Pesquisa personagem por nome!' });
   }
   res.status(200).send({
-    personagem: personagem.map((personagem) => ({
+    personagens: personagens.map((personagem) => ({
       id: personagem._id,
       name: personagem.name,
       imageUrl: personagem.imageUrl,

@@ -33,7 +33,6 @@ route.delete(
 
 route.get(
   '/search',
- 
   controllerPersonagens.pesquisaPersonagenController,
 );
 
