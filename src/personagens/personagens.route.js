@@ -32,7 +32,7 @@ route.delete(
 );
 router.get(
   '/search',
-  authMiddleware,
+ 
   controllerPersonagens.pesquisaPersonagenController,
 );
 
