@@ -67,13 +67,13 @@ const pesquisaPersonagenController = async (req, res) => {
   if (personagens.length === 0) {
     return res
       .status(400)
-      .send({ message: 'Pesquisa personagem por nome!' });
+      .send({ message: 'Verifique o nome do usuario' });
   }
   res.status(200).send({
-    personagens: personagens.map((personagem) => ({
-      id: personagem._id,
-      name: personagem.name,
-      imageUrl: personagem.imageUrl,
+    personagens: personagens.map((personagens) => ({
+      id: personagens._id,
+      name: personagens.name,
+      imageUrl: personagens.imageUrl,
       
      
     })),
