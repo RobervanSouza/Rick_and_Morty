@@ -131,6 +131,47 @@
         }
       }
     },
+    "/characters/create": {
+      "post": {
+        "summary": "Cria personagens",
+        "description": "Rota resposavel por criar personagens",
+        "tags": ["Personagens"],
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Personagens"
+              },
+              "examples": {
+                "Personagens": {
+                  "value": {
+                    "name": "teste swagger",
+                    "imageUrl": "foto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Criado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Personagens"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/characters": {
       "get": {
         "summary": "Lista de todos os personagens",
@@ -189,47 +230,7 @@
         }
       }
     },
-    "/characters/create": {
-      "post": {
-        "summary": "Cria personagens",
-        "description": "Rota resposavel por criar personagens",
-        "tags": ["Personagens"],
-        "security": [{ "bearerAuth": [] }],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Personagens"
-              },
-              "examples": {
-                "Personagens": {
-                  "value": {
-                    "name": "teste swagger",
-                    "imageUrl": "foto"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "400": {
-            "description": "Bad Request"
-          },
-          "201": {
-            "description": "Criado com sucesso",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "$ref": "#/components/schemas/Personagens"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
+
     "/characters/update/{id}": {
       "put": {
         "summary": "Edita id dos personagens",
@@ -339,57 +340,56 @@
           }
         }
       }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
     },
-
-    "components": {
-      "securitySchemes": {
-        "bearerAuth": {
-          "type": "http",
-          "scheme": "bearer",
-          "bearerFormat": "JWT"
+    "schemas": {
+      "Usuarios": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          }
         }
       },
-      "schemas": {
-        "Usuarios": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "username": {
-              "type": "string"
-            },
-            "email": {
-              "type": "string"
-            },
-            "password": {
-              "type": "string"
-            },
-            "avatar": {
-              "type": "string"
-            }
+      "Personagens": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "imageUrl": {
+            "type": "string"
           }
-        },
-        "Personagens": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "imageUrl": {
-              "type": "string"
-            }
-          }
-        },
-        "Auth": {
-          "type": "object",
-          "properties": {
-            "email": {
-              "type": "string"
-            },
-            "password": {
-              "type": "string"
-            }
+        }
+      },
+      "Auth": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
           }
         }
       }
