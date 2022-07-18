@@ -1,14 +1,21 @@
 <<<<<<< HEAD
 # 
 =======
-# Link do deploy no HEROKU
+# Link do deploy no HEROKU:
 https://rickandmortyprojeto04.herokuapp.com/api-docs/
 
-# Estrutura para o Projeto 04 Full-Stack
+# Projeto Rick and Morty - Back-end e Front-end (Full-Stack)
+## Objetivo do Projeto:
+* Fazer login
+* Cadastrar de usuários
+* Mostrar todos os Personagens
+* Cadastro de Personagens
+* Busca personagens by id
+* Edição de Personagens po id
+* Exclusão de Personagens
+* Busca Personagem por nome
 
-#Projeto Rick and Morty - Back-end e Front-end (Full-Stack)
 
-#Projeto final do terceiro mudulo do curso full-stack:
 ## Usando as seguites tecnologias:
 
 * NodeJS
@@ -41,7 +48,7 @@ Após o download e instalação, execute no terminal:
 
 * Executar o projeto abra o terminal digite >> npm run dev
 
-## Faça a criação de pastas no padrão MVC
+## Faça a criação de pastas no padrão MVC:
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/103292038/179327206-f0a0eb90-cfb8-4e5d-9a86-c8ca2727405c.png" width="300px" /> <img src="https://user-images.githubusercontent.com/103292038/179327495-c7290e03-87e0-466e-9009-1d210edd6865.png" width="300px" />
@@ -97,21 +104,19 @@ Após o download e instalação, execute no terminal:
 <div align="center">
 <img src="https://user-images.githubusercontent.com/103292038/179621956-9f1ef2a2-9413-4772-8d85-a9dac598ab96.png" width="300px" />
 </div>
-## para testar em front-end Tem que baixar atravez do site da BlueEdTeck: todos os direitos reservados:
 
-# Objetivo do Projeto
-* Fazer login
-* Cadastrar de usuários
-* Mostrar todos os Personagens
-* Cadastro de Personagens
-* Busca personagens by id
-* Edição de Personagens po id
-* Exclusão de Personagens
-* Busca Personagem por nome
+## Para testar em front-end Tem que baixar atravez do site da BlueEdTeck: todos os direitos reservados:
+https://blueedtech.com.br/
 
 # Licença
 Este projeto está sob a licença (Mozilla Public License 2.0) - veja o arquivo LICENSE.md
+https://github.com/RobervanSouza/modulo03-projeto04/blob/main/LICENSE
+# Autor
+https://github.com/RobervanSouza
+https://www.linkedin.com/in/robervan-souza/
 
+# Agradecimentos:
+Agradeço a todos da Blue pelo conhecimento que venho obtendo a cada modulo do curso.
 
 
 
