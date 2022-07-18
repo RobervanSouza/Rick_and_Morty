@@ -30,5 +30,10 @@ route.delete(
   validId,
   controllerPersonagens.deletePersonagenController,
 );
+router.get(
+  '/search',
+  authMiddleware,
+  controllerPersonagens.pesquisaPersonagenController,
+);
 
 module.exports = route;

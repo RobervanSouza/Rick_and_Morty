@@ -33,10 +33,19 @@ const deletePersonagenService = async (id) => {
   return await Personagen.findByIdAndDelete(id);
 };
 
+const pesquisaPersonagemService = (name) =>
+  Personagen.find({
+    name: { $regex: `${name || ''}`, $options: 'i' },
+  })
+    .sort({ _id: -1 })
+    .populate('user');
+
+
 module.exports = {
   findAllPersonagensService,
   findByIdPersonagenService,
   createPersonagenService,
   updatePersonagenService,
   deletePersonagenService,
+  pesquisaPersonagemService,
 };

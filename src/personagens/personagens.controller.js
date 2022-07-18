@@ -58,10 +58,33 @@ const deletePersonagenController = async (req, res) => {
   res.send({ message: 'Personagen deletado com sucesso!!!', idParam });
 };
 
+// pesquisa personagens
+const pesquisaPersonagenController = async (req, res) => {
+  const { name } = req.query;
+
+  const personagem = await personagensService.pesquisaPersonagenController(name);
+
+  if (personagem.length === 0) {
+    return res
+      .status(400)
+      .send({ message: 'There are no characters with this name registered!' });
+  }
+  res.status(200).send({
+    personagem: personagem.map((personagem) => ({
+      id: personagem._id,
+      name: personagem.name,
+      imageUrl: personagem.imageUrl,
+      
+     
+    })),
+  });
+};
+
 module.exports = {
   findAllPersonagensController,
   findByIdPersonagenController,
   createPersonagenController,
   updatePersonagenController,
   deletePersonagenController,
+  pesquisaPersonagenController,
 };
