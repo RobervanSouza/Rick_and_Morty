@@ -10,13 +10,14 @@
     "verson": "1.0.0"
   },
   "servers": [
-    {
-      "url": "http://localhost:3001",
-      "description": "Api de teste de personagens"
-    }, 
+    
     {
       "url": "https://rickandmortyprojeto04.herokuapp.com",
       "description": "Api do Heroku"
+    },
+    {
+      "url": "http://localhost:3001",
+      "description": "Api de teste de personagens"
     }
   ],
   "paths": {
