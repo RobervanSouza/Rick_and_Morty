@@ -15,7 +15,7 @@
       "description": "Api de teste de personagens"
     }, 
     {
-      "url": "https://rickandmortyprojeto04.herokuapp.com/",
+      "url": "https://rickandmortyprojeto04.herokuapp.com",
       "description": "Api do Heroku"
     }
   ],
