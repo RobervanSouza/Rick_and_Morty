@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
   if (!authHeader) {
     return res.status(401).send({ message: 'Token não informado!!!' });
   }
-  const parts = authHeader.split('');
+  const parts = authHeader.split(" ");
 
   if (parts.length !== 2) {
     return res.status(401).send({ message: 'Token invalido teste!!!' });
