@@ -31,9 +31,6 @@ route.delete(
   controllerPersonagens.deletePersonagenController,
 );
 
-route.get(
-  '/search',
-  controllerPersonagens.pesquisaPersonagenController,
-);
+route.get('/search', controllerPersonagens.pesquisaPersonagenController);
 
 module.exports = route;

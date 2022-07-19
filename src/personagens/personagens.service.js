@@ -42,7 +42,6 @@ const pesquisaPersonagenService = (name) =>
     .sort({ _id: -1 })
     .populate('user');
 
-
 module.exports = {
   findAllPersonagensService,
   findByIdPersonagenService,

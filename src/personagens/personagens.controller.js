@@ -65,17 +65,13 @@ const pesquisaPersonagenController = async (req, res) => {
   const personagens = await personagensService.pesquisaPersonagenService(name);
 
   if (personagens.length === 0) {
-    return res
-      .status(400)
-      .send({ message: 'Verifique o nome do usuario' });
+    return res.status(400).send({ message: 'Verifique o nome do usuario' });
   }
   res.status(200).send({
     personagens: personagens.map((personagens) => ({
       id: personagens._id,
       name: personagens.name,
       imageUrl: personagens.imageUrl,
-      
-     
     })),
   });
 };
