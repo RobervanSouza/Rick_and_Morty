@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
   const parts = authHeader.split('');
 
   if (parts.length !== 2) {
-    return res.status(401).send({ message: 'Token invalido!!!' });
+    return res.status(401).send({ message: 'Token invalido teste!!!' });
   }
 
   const [scheme, token] = parts;
